@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
-import { LOGIN } from "../router/urls";
+import Home from './home/home';
+
+import { LOGIN } from '../router/urls';
 
 /**
  * <PrivateComponet/> Component as an entry point for
@@ -13,7 +15,7 @@ class PrivateComponent extends React.Component {
    * Gets the login status of the user.
    */
   getLoggedInStatus() {
-    return false;
+    return true;
   }
 
   /**
@@ -22,15 +24,7 @@ class PrivateComponent extends React.Component {
   render() {
     const isLoggedIn = this.getLoggedInStatus();
 
-    return (
-      <div>
-        {isLoggedIn ? (
-          <p>You are logged in.</p>
-        ) : (
-          <Redirect to={{ pathname: LOGIN }} />
-        )}
-      </div>
-    );
+    return <>{isLoggedIn ? <Home /> : <Redirect to={LOGIN} />}</>;
   }
 }
 
