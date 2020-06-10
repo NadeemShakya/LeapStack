@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import RoutePath from "./router/routes";
+import RoutePath from './router/routes';
 
+/**
+ * The main app component.
+ */
 function App() {
   return <RoutePath />;
 }
